@@ -25,7 +25,6 @@ package-lock.json
 ######################
 *.log
 *.sql
-!deployment/*.sql
 *.sqlite
 
 # OS generated files #
@@ -38,37 +37,16 @@ package-lock.json
 ehthumbs.db
 Thumbs.db
 
-# FTP #
-#######
-public/pmacho/*
-public/ftp/*
-!public/ftp/icons/
-!public/ftp/sites/default-certificate.png
-!public/ftp/users/anonymous.png
-cache/*
-logserp/*
-logstpv/*
-
 # Project custom ignores #
 ##########################
 .idea/
 .vscode/
 .sass-cache/*
 vendor/
-!assets/scss/vendor
-!assets/js/vendor
-!assets/js/vendor/vendor
 composer.lock
-config/environment_custom.php
-config/maintenance.php
 
 # CMS #
 #######
 /node_modules/*
-/private/*
 storage/**/*
-public/cms-iw4/php/webconf/cms-iw4/web/**/*
-public/cms-iw4/php/webconf/cms-iw4/config/**/*.csv
-public/cms-iw4/plugins/**/*
 plugins/**/vendor/**/*
-src/Config/Connections/*

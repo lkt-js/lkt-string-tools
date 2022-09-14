@@ -1,5 +1,5 @@
 import {
-  cloneString, formatNumber,
+  cloneString, extractFillData, fill, formatNumber,
   generateRandomString, getBaseName,
   htmlEntities,
   isEmail,
@@ -128,4 +128,20 @@ test('formatNumber 1', () => {
 
 test('formatNumber 2', () => {
   expect(formatNumber(2224.89, 2, '.', ',')).toEqual('2,224.89');
+});
+
+test('extractFillData 1', () => {
+  expect(extractFillData('/api/test/:lorem/:ipsum', {lorem: 'eat', ipsum: 'beans'})).toEqual(['lorem','ipsum']);
+});
+
+test('fill 1', () => {
+  expect(fill('/api/test/:lorem/:ipsum', {lorem: 'eat', ipsum: 'beans'})).toEqual('/api/test/eat/beans');
+});
+
+test('fill 2', () => {
+  expect(fill('/api/test/:lorem/:ipsum', {lorem: 'eat', ipsum: 'beans'}, '{')).toEqual('/api/test/:lorem/:ipsum');
+});
+
+test('fill 3', () => {
+  expect(fill('/api/test/{lorem}/{ipsum}', {lorem: 'eat', ipsum: 'beans'}, '{', '}')).toEqual('/api/test/eat/beans');
 });

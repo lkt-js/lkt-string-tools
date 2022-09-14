@@ -1,88 +1,85 @@
 function t(e) {
   e = String(e);
-  let o = "/";
-  e.indexOf("C:\\") === 0 && (o = "\\");
-  let i = e.substring(e.lastIndexOf(o) + 1);
-  return i.lastIndexOf(".") !== -1 && (i = i.substring(0, i.lastIndexOf("."))), i;
+  let a = "/";
+  e.indexOf("C:\\") === 0 && (a = "\\");
+  let o = e.substring(e.lastIndexOf(a) + 1);
+  return o.lastIndexOf(".") !== -1 && (o = o.substring(0, o.lastIndexOf("."))), o;
 }
-function d(e, o, i) {
-  for (e = String(e); e.length < o; )
-    e = i + e;
+function d(e, a, o) {
+  for (e = String(e); e.length < a; )
+    e = o + e;
   return e;
 }
-function h(e = "", o = {}, i = ":", a = "") {
-  const u = [];
-  for (const c in o)
-    o.hasOwnProperty(c) && e.indexOf(i + c + a) > -1 && u.push(c);
-  return u;
+function C(e, a, o = ":", i = "") {
+  return Object.keys(a).filter((u) => e.indexOf(o + u + i) > -1);
 }
-function p(e = "", o = {}, i = ":", a = "") {
-  for (const u in o)
-    o.hasOwnProperty(u) && (e = e.replace(i + u + a, o[u]));
-  return e;
+function p(e, a, o = ":", i = "") {
+  return Object.keys(a).forEach((c) => {
+    e = e.replace(o + c + i, a[c]);
+  }), e;
 }
-function C(e = 10) {
-  let o = "";
-  const i = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", a = i.length;
+function h(e = 10) {
+  let a = "";
+  const o = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", i = o.length;
   for (let u = 0; u < e; u++)
-    o += i.charAt(Math.floor(Math.random() * a));
-  return o;
+    a += o.charAt(Math.floor(Math.random() * i));
+  return a;
 }
-function x(e, o) {
-  e === null && (e = ""), o = (`${o || ""}`.toLowerCase().match(/<[a-z][a-z0-9]*>/g) || []).join("");
-  const i = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi, a = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi;
-  return e.replace(a, "").replace(i, function(u, c) {
-    return o.indexOf(`<${c.toLowerCase()}>`) > -1 ? u : "";
+function x(e, a) {
+  e === null && (e = ""), a = (`${a || ""}`.toLowerCase().match(/<[a-z][a-z0-9]*>/g) || []).join("");
+  const o = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi, i = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi;
+  return e.replace(i, "").replace(o, function(u, c) {
+    return a.indexOf(`<${c.toLowerCase()}>`) > -1 ? u : "";
   });
 }
 function E(e) {
   return String(e).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
-function n(e, o, i) {
-  return e.replace(new RegExp(o, "g"), i);
+function n(e, a, o) {
+  return e.replace(new RegExp(a, "g"), o);
 }
-function g(e, o) {
-  return e.replace(/\s/g, o);
+function g(e, a) {
+  return e.replace(/\s/g, a);
 }
-function S(e) {
+function m(e) {
   return e.replace(/^\s+|\s+$/gm, "");
 }
 const r = "^[-!#$%&'*+\\./0-9=?A-Z^_`a-z{|}~]+@[-!#$%&'*+\\/0-9=?A-Z^_`a-z{|}~]+.[-!#$%&'*+\\./0-9=?A-Z^_`a-z{|}~]+$";
-function f(e) {
+function l(e) {
   return typeof e == "string";
 }
-function m(e) {
+function S(e) {
   return new RegExp(r).test(e);
 }
-function l(e) {
+function f(e) {
   return String(e);
 }
 function F(e) {
   return ` ${e}`.slice(1);
 }
 function A(e) {
-  return f(e) || (e = l(e)), !!e;
+  return l(e) || (e = f(e)), !!e;
 }
-function w(e = "") {
-  return f(e) && e !== "" && e.indexOf("data:image/") !== -1;
+function b(e = "") {
+  return l(e) && e !== "" && e.indexOf("data:image/") !== -1;
 }
 function z(e = "") {
-  return e.replace(/-([a-z])/g, function(o) {
-    return o[1].toUpperCase();
+  return e.replace(/-([a-z])/g, function(a) {
+    return a[1].toUpperCase();
   });
 }
 function D(e) {
   return e += "", e.charAt(0).toUpperCase() + e.substring(1);
 }
-function O(e, o, i, a) {
+function O(e, a, o, i) {
   let u = String(
-    parseFloat(e).toFixed(o).replace(/\d(?=(\d{3})+\.)/g, "$&D")
+    parseFloat(e).toFixed(a).replace(/\d(?=(\d{3})+\.)/g, "$&D")
   );
-  return u = String(u.replace(".", i)), u = u.replace(/D/g, a), u;
+  return u = String(u.replace(".", o)), u = u.replace(/D/g, i), u;
 }
-function b(e) {
+function w(e) {
   return decodeURIComponent(
-    l(e).replace(/%(?![\da-f]{2})/gi, "%25").replace(/\+/g, "%20")
+    f(e).replace(/%(?![\da-f]{2})/gi, "%25").replace(/\+/g, "%20")
   );
 }
 function $(e) {
@@ -91,41 +88,41 @@ function $(e) {
 function y(e) {
   e = e.replace(/\r\n/g, `
 `);
-  let o = "";
-  for (let i = 0; i < e.length; i++) {
-    const a = e.charCodeAt(i);
-    a < 128 ? o += String.fromCharCode(a) : a > 127 && a < 2048 ? (o += String.fromCharCode(a >> 6 | 192), o += String.fromCharCode(a & 63 | 128)) : (o += String.fromCharCode(a >> 12 | 224), o += String.fromCharCode(a >> 6 & 63 | 128), o += String.fromCharCode(a & 63 | 128));
+  let a = "";
+  for (let o = 0; o < e.length; o++) {
+    const i = e.charCodeAt(o);
+    i < 128 ? a += String.fromCharCode(i) : i > 127 && i < 2048 ? (a += String.fromCharCode(i >> 6 | 192), a += String.fromCharCode(i & 63 | 128)) : (a += String.fromCharCode(i >> 12 | 224), a += String.fromCharCode(i >> 6 & 63 | 128), a += String.fromCharCode(i & 63 | 128));
   }
-  return o;
+  return a;
 }
-function B(e) {
-  let o = "", i = 0, a = 0, u = 0, c = 0;
-  for (; i < e.length; )
-    a = e.charCodeAt(i), a < 128 ? (o += String.fromCharCode(a), i++) : a > 191 && a < 224 ? (u = e.charCodeAt(i + 1), o += String.fromCharCode((a & 31) << 6 | u & 63), i += 2) : (u = e.charCodeAt(i + 1), c = e.charCodeAt(i + 2), o += String.fromCharCode((a & 15) << 12 | (u & 63) << 6 | c & 63), i += 3);
-  return o;
+function I(e) {
+  let a = "", o = 0, i = 0, u = 0, c = 0;
+  for (; o < e.length; )
+    i = e.charCodeAt(o), i < 128 ? (a += String.fromCharCode(i), o++) : i > 191 && i < 224 ? (u = e.charCodeAt(o + 1), a += String.fromCharCode((i & 31) << 6 | u & 63), o += 2) : (u = e.charCodeAt(o + 1), c = e.charCodeAt(o + 2), a += String.fromCharCode((i & 15) << 12 | (u & 63) << 6 | c & 63), o += 3);
+  return a;
 }
 export {
   F as cloneString,
-  b as decodeUrl,
-  h as extractFillData,
+  w as decodeUrl,
+  C as extractFillData,
   p as fill,
   O as formatNumber,
-  C as generateRandomString,
+  h as generateRandomString,
   t as getBaseName,
   $ as getUrlSlug,
   E as htmlEntities,
-  w as isBase64String,
-  m as isEmail,
+  b as isBase64Image,
+  S as isEmail,
   A as isFilled,
-  f as isString,
+  l as isString,
   z as kebabCaseToCamelCase,
   d as lpad,
   n as replaceAll,
   g as replaceSingleWhiteSpaces,
   x as stripTags,
-  l as toString,
-  S as trim,
+  f as toString,
+  m as trim,
   D as ucfirst,
-  B as utf8Decode,
+  I as utf8Decode,
   y as utf8Encode
 };

@@ -7,7 +7,7 @@ export {
   replaceSingleWhiteSpaces,
   trim,
 } from './functions/functions-replacements';
-export { isBase64String, isFilled } from './functions/functions-status';
+export { isBase64Image, isFilled } from './functions/functions-status';
 export { formatNumber,kebabCaseToCamelCase, ucfirst } from './functions/functions-style';
 export {
   cloneString,

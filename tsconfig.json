@@ -9,6 +9,7 @@
     "jsx": "preserve",
     "allowJs": true,
     "declaration": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "esModuleInterop": true
   }
 }

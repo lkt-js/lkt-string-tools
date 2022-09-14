@@ -8,6 +8,6 @@ export function isFilled(str: any): boolean {
   return !!str;
 }
 
-export function isBase64String(src = ''): boolean {
+export function isBase64Image(src = ''): boolean {
   return isString(src) && src !== '' && src.indexOf('data:image/') !== -1;
 }
