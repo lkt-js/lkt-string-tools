@@ -1,11 +1,12 @@
 {
   "name": "lkt-string-tools",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A collection of functions for working with strings",
   "main": "src/index.js",
   "module": "src/index.js",
   "keywords": [
-    "lkt web tech",
+    "lkt",
+    "lkt-web-tech",
     "ts",
     "typescript",
     "js",
@@ -72,7 +73,7 @@
     "vue": "^3.2.37",
     "vue-tsc": "^0.38.9"
   },
-  "peerDependencies": {
+  "dependencies": {
     "lkt-ts-interfaces": "^1.0.0"
   }
 }
