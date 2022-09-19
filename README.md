@@ -93,7 +93,7 @@ Replaces all whitespaces which only has one occurrence at a time in `target` wit
 ```js
 import {replaceSingleWhiteSpaces} from "lkt-string-tools";
 
-const str1 = replaceAll('hey you!', '_');
+const str1 = replaceSingleWhiteSpaces('hey you!', '_'); // Returns: "hey_you!"
 ```
 
 ### trim
@@ -110,7 +110,7 @@ Removes starting and ending whitespaces from `target`
 ```js
 import {trim} from "lkt-string-tools";
 
-const str1 = trim('   lorem ipsum   ');
+const str1 = trim('   lorem ipsum   ') // Returns: "lorem ipsum"
 ```
 
 
