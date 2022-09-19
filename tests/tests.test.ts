@@ -56,6 +56,10 @@ test('trim', () => {
   expect(trim('   lorem ipsum dolor   ')).toEqual('lorem ipsum dolor');
 });
 
+test('trim text', () => {
+  expect(trim('""lorem ipsum dolor""', '"')).toEqual('lorem ipsum dolor');
+});
+
 test('isFilled: true', () => {
   expect(isFilled('   lorem ipsum dolor   ')).toEqual(true);
 });

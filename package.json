@@ -1,6 +1,6 @@
 {
   "name": "lkt-string-tools",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A collection of functions for working with strings",
   "main": "src/index.js",
   "module": "src/index.js",

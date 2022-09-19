@@ -8,8 +8,9 @@
 
 Returns a random string
 
-#### Args
-- length <int> (default: 10)
+| Arg    | Type    | Default | Description                 |
+|--------|---------|---------|-----------------------------|
+| length | integer | 10      | Length of the random string |
 
 #### Usage
 
@@ -27,10 +28,10 @@ const str2 = generateRandomString(14);
 
 Removes HTML tags from `input` except if defined in `allowed`
 
-#### Args
-- input <string>
-- allowed <string>
-  - The format is like following: `<a><b><c>` (only tags in lowercase)
+| Arg     | Type   | Default | Description                                                        |
+|---------|--------|---------|--------------------------------------------------------------------|
+| input   | string |         | String to be cleaned                                               |
+| allowed | string |         | The format is like following: `<a><b><c>` (only tags in lowercase) |
 
 #### Usage
 
@@ -45,8 +46,9 @@ const str2 = stripTags('<span>Hello world</span>', '<span>'); // Returns "<span>
 
 Convert `input` to HTML entities
 
-#### Args
-- input <string>
+| Arg     | Type   | Default | Description             |
+|---------|--------|---------|-------------------------|
+| input   | string |         | String to be converted  |
 
 #### Usage
 
@@ -63,26 +65,28 @@ const str1 = htmlEntities('lorem ipsum dolor sit amet');
 
 Replaces all occurrences of `search` in `target` with `replacement`
 
-#### Args
-- target <string>
-- search <string>
-- replacement <string>
+| Arg         | Type   | Default | Description                                      |
+|-------------|--------|---------|--------------------------------------------------|
+| target      | string |         | String which will be used to replace occurrences |
+| search      | string |         | Search pattern                                   |
+| replacement | string |         | Replacement                                      |
 
 #### Usage
 
 ```js
 import {replaceAll} from "lkt-string-tools";
 
-const str1 = replaceAll('hey you!', 'h', 'H');
+const str1 = replaceAll('hey you!', 'h', 'H'); // Returns "Hey you!"
 ```
 
 ### replaceSingleWhiteSpaces
 
 Replaces all whitespaces which only has one occurrence at a time in `target` with `replacement`
 
-#### Args
-- target <string>
-- replacement <string>
+| Arg         | Type   | Default | Description                                      |
+|-------------|--------|---------|--------------------------------------------------|
+| target      | string |         | String which will be used to replace occurrences |
+| replacement | string |         | Replacement                                      |
 
 #### Usage
 
@@ -96,8 +100,10 @@ const str1 = replaceAll('hey you!', '_');
 
 Removes starting and ending whitespaces from `target`
 
-#### Args
-- target <string>
+| Arg    | Type     | Default | Description          |
+|--------|----------|---------|----------------------|
+| target | string   |         | String to be trimmed |
+| value  | string   |  ''     | Search string        |
 
 #### Usage
 
@@ -114,8 +120,9 @@ const str1 = trim('   lorem ipsum   ');
 
 Checks if a string has content of it's empty
 
-#### Args
-- string <string>
+| Arg     | Type   | Default | Description     |
+|---------|--------|---------|-----------------|
+| target  | string |         | String to check |
 
 #### Usage
 
@@ -131,8 +138,9 @@ if (isFilled('lorem')) {
 
 Checks if a string is base64 encoded image
 
-#### Args
-- string <string>
+| Arg     | Type   | Default | Description     |
+|---------|--------|---------|-----------------|
+| target  | string |         | String to check |
 
 #### Usage
 
@@ -151,8 +159,9 @@ if (isBase64Image('lorem')) {
 
 Convert from kebab case to camel case
 
-#### Args
-- string <string>
+| Arg     | Type   | Default | Description       |
+|---------|--------|---------|-------------------|
+| target  | string |         | String to convert |
 
 #### Usage
 
@@ -166,8 +175,9 @@ console.log(kebabCaseToCamelCase('lorem-ipsum-dolor-sit-amet'))
 
 Converts first letter to uppercase
 
-#### Args
-- string <string>
+| Arg     | Type   | Default | Description       |
+|---------|--------|---------|-------------------|
+| target  | string |         | String to convert |
 
 #### Usage
 
@@ -181,11 +191,12 @@ console.log(ucfirst('lorem ipsum'))
 
 Format a number
 
-#### Args
-- number <number>
-- decimals <number>
-- decimalPoint <string>
-- thousandsSeparator <string>
+| Arg                | Type    | Default | Description               |
+|--------------------|---------|---------|---------------------------|
+| number             | Number  |         | Number to format          |
+| decimals           | integer |         | Amount of decimals        |
+| decimalPoint       | string  |         | Decimal point separator   |
+| thousandsSeparator | string  |         | Thousands point separator |
 
 #### Usage
 
@@ -203,8 +214,9 @@ console.log(formatNumber(2000, 4, '.', ','))// 2,000.0000
 
 Checks if a given var is string
 
-#### Args
-- var <any>
+| Arg       | Type    | Default | Description               |
+|-----------|---------|---------|---------------------------|
+| target  | any     |         | Var to check              |
 
 #### Usage
 
@@ -218,8 +230,9 @@ console.log(isString('lorem-ipsum-dolor-sit-amet'))
 
 Checks if a given string content has email format
 
-#### Args
-- string <string>
+| Arg    | Type   | Default | Description     |
+|--------|--------|---------|-----------------|
+| target | string |         | String to check |
 
 #### Usage
 
@@ -233,8 +246,9 @@ console.log(isEmail('lorem ipsum'))
 
 Cast to string
 
-#### Args
-- var <any>
+| Arg    | Type    | Default | Description               |
+|--------|---------|---------|---------------------------|
+| target | any     |         | Data to convert to string |
 
 #### Usage
 
@@ -248,8 +262,9 @@ console.log(toString(20))
 
 Creates a copy of the string without the reference to the original var.
 
-#### Args
-- string <string>
+| Arg    | Type   | Default | Description     |
+|--------|--------|---------|-----------------|
+| target | string |         | String to clone |
 
 #### Usage
 
@@ -266,8 +281,9 @@ console.log(cloneString('my awesome string'))
 
 Decodes and url encoded string
 
-#### Args
-- string <string>
+| Arg    | Type   | Default | Description      |
+|--------|--------|---------|------------------|
+| target | string |         | String to decode |
 
 #### Usage
 
@@ -281,8 +297,9 @@ console.log(decodeUrl('lorem-ipsum-dolor-sit-amet'))
 
 Removes invalid chars to retrieve a nice url slug
 
-#### Args
-- string <string>
+| Arg    | Type   | Default | Description     |
+|--------|--------|---------|-----------------|
+| target | string |         | String to clean |
 
 #### Usage
 
@@ -299,8 +316,9 @@ console.log(getUrlSlug('lorem ipsum'))
 
 Encodes to UTF8
 
-#### Args
-- string <string>
+| Arg    | Type   | Default | Description      |
+|--------|--------|---------|------------------|
+| target | string |         | String to encode |
 
 #### Usage
 
@@ -314,8 +332,9 @@ console.log(utf8Encode('lorem-ipsum-dolor-sit-amet'))
 
 Decodes from UTF8
 
-#### Args
-- string <string>
+| Arg    | Type   | Default | Description      |
+|--------|--------|---------|------------------|
+| target | string |         | String to decode |
 
 #### Usage
 
