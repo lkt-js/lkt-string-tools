@@ -13,26 +13,26 @@ function p(e, n, a) {
 function d(e, n, a = ":", i = "") {
   return Object.keys(n).filter((c) => e.indexOf(a + c + i) > -1);
 }
-function C(e, n, a = ":", i = "") {
-  return Object.keys(n).forEach((u) => {
-    e = e.replace(a + u + i, n[u]);
+function h(e, n, a = ":", i = "") {
+  return Object.keys(n).forEach((f) => {
+    e = e.replace(a + f + i, n[f]);
   }), e;
 }
-function h(e = 10) {
+function C(e = 10) {
   let n = "";
   const a = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", i = a.length;
   for (let c = 0; c < e; c++)
     n += a.charAt(Math.floor(Math.random() * i));
   return n;
 }
-function x(e, n) {
+function m(e, n) {
   e === null && (e = ""), n = (`${n || ""}`.toLowerCase().match(/<[a-z][a-z0-9]*>/g) || []).join("");
   const a = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi, i = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi;
-  return e.replace(i, "").replace(a, function(c, u) {
-    return n.indexOf(`<${u.toLowerCase()}>`) > -1 ? c : "";
+  return e.replace(i, "").replace(a, function(c, f) {
+    return n.indexOf(`<${f.toLowerCase()}>`) > -1 ? c : "";
   });
 }
-function E(e) {
+function S(e) {
   return String(e).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
 function o(e, n, a) {
@@ -41,54 +41,55 @@ function o(e, n, a) {
 function g(e, n) {
   return e.replace(/\s/g, n);
 }
-function m(e, n = "") {
+function A(e, n = "") {
   if (n === "")
     return e.replace(/^\s+|\s+$/gm, "");
   const a = new RegExp(`^${n}+|${n}+$`, "gm");
   return e.replace(a, "");
 }
 const r = "^[-!#$%&'*+\\./0-9=?A-Z^_`a-z{|}~]+@[-!#$%&'*+\\/0-9=?A-Z^_`a-z{|}~]+.[-!#$%&'*+\\./0-9=?A-Z^_`a-z{|}~]+$";
-function f(e) {
+function u(e) {
   return typeof e == "string";
 }
-function S(e) {
+function $(e) {
   return new RegExp(r).test(e);
 }
 function l(e) {
   return String(e);
 }
-function F(e) {
+function b(e) {
   return ` ${e}`.slice(1);
 }
-function A(e) {
-  return f(e) || (e = l(e)), !!e;
+function x(e) {
+  return u(e) || (e = l(e)), !!e;
 }
-function $(e = "") {
-  return f(e) && e !== "" && e.indexOf("data:image/") !== -1;
+function E(e = "") {
+  return u(e) && e !== "" && e.indexOf("data:image/") !== -1;
 }
-function b(e = "") {
+function w(e = "") {
   return e.replace(/-([a-z])/g, function(n) {
     return n[1].toUpperCase();
   });
 }
-function w(e) {
+function z(e) {
   return e += "", e.charAt(0).toUpperCase() + e.substring(1);
 }
-function z(e, n, a, i) {
+function O(e, n, a, i) {
   let c = String(
+    // @ts-ignore
     parseFloat(e).toFixed(n).replace(/\d(?=(\d{3})+\.)/g, "$&D")
   );
   return c = String(c.replace(".", a)), c = c.replace(/D/g, i), c;
 }
-function D(e) {
+function y(e) {
   return decodeURIComponent(
     l(e).replace(/%(?![\da-f]{2})/gi, "%25").replace(/\+/g, "%20")
   );
 }
-function O(e) {
-  return e = e.toLowerCase(), e = g(e, "-"), e = o(e, "\xF1", "n"), e = o(e, "'", ""), e = o(e, "\xB4", ""), e = o(e, "\\", ""), e = o(e, ".", ""), e = o(e, ",", ""), e = o(e, "/", ""), e = o(e, ":", ""), e = o(e, "\xE1", "a"), e = o(e, "\xE9", "e"), e = o(e, "\xED", "i"), e = o(e, "\xF3", "o"), e = o(e, "\xFA", "u"), e = o(e, "\xE0", "a"), e = o(e, "\xE0", "e"), e = o(e, "\xE0", "i"), e = o(e, "\xE0", "o"), e = o(e, "\xE0", "u"), e = o(e, "\u1E83", "w"), e = o(e, "\u1E81", "w"), e = o(e, "\xFD", "y"), e = o(e, "\u1EF3", "y"), e = o(e, "\u015B", "s"), e = o(e, "\u01F5", "g"), e = o(e, "\u1E31", "k"), e = o(e, "\u013A", "l"), e = o(e, "\u017A", "z"), e = o(e, "\u0107", "c"), e = o(e, "\u01D8", "v"), e = o(e, "\u0144", "n"), e = o(e, "\u1E3F", "m"), e = o(e, "\u01F9", "n"), e = o(e, "\u01DC", "v"), e = o(e, "\xE4", "a"), e = o(e, "\xEB", "e"), e = o(e, "\xEF", "i"), e = o(e, "\xF6", "o"), e = o(e, "\xFC", "u"), e = o(e, "\u1E85", "w"), e = o(e, "\xFF", "y"), e = o(e, "\u1E8D", "x"), e;
+function I(e) {
+  return e = e.toLowerCase(), e = g(e, "-"), e = o(e, "ñ", "n"), e = o(e, "'", ""), e = o(e, "´", ""), e = o(e, "\\", ""), e = o(e, ".", ""), e = o(e, ",", ""), e = o(e, "/", ""), e = o(e, ":", ""), e = o(e, "á", "a"), e = o(e, "é", "e"), e = o(e, "í", "i"), e = o(e, "ó", "o"), e = o(e, "ú", "u"), e = o(e, "à", "a"), e = o(e, "à", "e"), e = o(e, "à", "i"), e = o(e, "à", "o"), e = o(e, "à", "u"), e = o(e, "ẃ", "w"), e = o(e, "ẁ", "w"), e = o(e, "ý", "y"), e = o(e, "ỳ", "y"), e = o(e, "ś", "s"), e = o(e, "ǵ", "g"), e = o(e, "ḱ", "k"), e = o(e, "ĺ", "l"), e = o(e, "ź", "z"), e = o(e, "ć", "c"), e = o(e, "ǘ", "v"), e = o(e, "ń", "n"), e = o(e, "ḿ", "m"), e = o(e, "ǹ", "n"), e = o(e, "ǜ", "v"), e = o(e, "ä", "a"), e = o(e, "ë", "e"), e = o(e, "ï", "i"), e = o(e, "ö", "o"), e = o(e, "ü", "u"), e = o(e, "ẅ", "w"), e = o(e, "ÿ", "y"), e = o(e, "ẍ", "x"), e;
 }
-function y(e) {
+function R(e) {
   e = e.replace(/\r\n/g, `
 `);
   let n = "";
@@ -98,34 +99,34 @@ function y(e) {
   }
   return n;
 }
-function I(e) {
-  let n = "", a = 0, i = 0, c = 0, u = 0;
+function k(e) {
+  let n = "", a = 0, i = 0, c = 0, f = 0;
   for (; a < e.length; )
-    i = e.charCodeAt(a), i < 128 ? (n += String.fromCharCode(i), a++) : i > 191 && i < 224 ? (c = e.charCodeAt(a + 1), n += String.fromCharCode((i & 31) << 6 | c & 63), a += 2) : (c = e.charCodeAt(a + 1), u = e.charCodeAt(a + 2), n += String.fromCharCode((i & 15) << 12 | (c & 63) << 6 | u & 63), a += 3);
+    i = e.charCodeAt(a), i < 128 ? (n += String.fromCharCode(i), a++) : i > 191 && i < 224 ? (c = e.charCodeAt(a + 1), n += String.fromCharCode((i & 31) << 6 | c & 63), a += 2) : (c = e.charCodeAt(a + 1), f = e.charCodeAt(a + 2), n += String.fromCharCode((i & 15) << 12 | (c & 63) << 6 | f & 63), a += 3);
   return n;
 }
 export {
-  F as cloneString,
-  D as decodeUrl,
+  b as cloneString,
+  y as decodeUrl,
   d as extractFillData,
-  C as fill,
-  z as formatNumber,
-  h as generateRandomString,
+  h as fill,
+  O as formatNumber,
+  C as generateRandomString,
   t as getBaseName,
-  O as getUrlSlug,
-  E as htmlEntities,
-  $ as isBase64Image,
-  S as isEmail,
-  A as isFilled,
-  f as isString,
-  b as kebabCaseToCamelCase,
+  I as getUrlSlug,
+  S as htmlEntities,
+  E as isBase64Image,
+  $ as isEmail,
+  x as isFilled,
+  u as isString,
+  w as kebabCaseToCamelCase,
   p as lpad,
   o as replaceAll,
   g as replaceSingleWhiteSpaces,
-  x as stripTags,
+  m as stripTags,
   l as toString,
-  m as trim,
-  w as ucfirst,
-  I as utf8Decode,
-  y as utf8Encode
+  A as trim,
+  z as ucfirst,
+  k as utf8Decode,
+  R as utf8Encode
 };
