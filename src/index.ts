@@ -6,6 +6,7 @@ export {
   replaceAll,
   replaceSingleWhiteSpaces,
   trim,
+  replaceNonAsciiChars
 } from './functions/functions-replacements';
 export { isBase64Image, isFilled } from './functions/functions-status';
 export { formatNumber,kebabCaseToCamelCase, ucfirst } from './functions/functions-style';
