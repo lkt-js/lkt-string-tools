@@ -191,12 +191,13 @@ console.log(ucfirst('lorem ipsum'))
 
 Format a number
 
-| Arg                | Type    | Default | Description               |
-|--------------------|---------|---------|---------------------------|
-| number             | Number  |         | Number to format          |
-| decimals           | integer |         | Amount of decimals        |
-| decimalPoint       | string  |         | Decimal point separator   |
-| thousandsSeparator | string  |         | Thousands point separator |
+| Arg                  | Type    | Default | Description                                                |
+|----------------------|---------|---------|------------------------------------------------------------|
+| number               | Number  |         | Number to format                                           |
+| decimals             | integer |         | Amount of decimals                                         |
+| decimalPoint         | string  |         | Decimal point separator                                    |
+| thousandsSeparator   | string  |         | Thousands point separator                                  |
+| removeDecimalsIfZero | boolean | true    | Prevents returning results like "123.00" and returns "123" |
 
 #### Usage
 

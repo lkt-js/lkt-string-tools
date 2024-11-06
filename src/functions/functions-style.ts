@@ -14,7 +14,8 @@ export function formatNumber(
   value: number,
   decimals: number,
   decimalPoint: string,
-  thousandsSeparator: string
+  thousandsSeparator: string,
+  removeDecimalsIfZero: boolean = true
 ) {
   let v = String(
     // @ts-ignore
@@ -23,6 +24,10 @@ export function formatNumber(
       .replace(/\d(?=(\d{3})+\.)/g, '$&D')
   );
   v = String(v.replace('.', decimalPoint));
+  let _v = v.split(decimalPoint);
+  if (removeDecimalsIfZero && parseInt(_v[1]) === 0) {
+    v = _v[0];
+  }
   v = v.replace(/D/g, thousandsSeparator);
   return v;
 }
