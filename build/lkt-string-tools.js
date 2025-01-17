@@ -25,7 +25,7 @@ function O(e = 10) {
     r += n.charAt(Math.floor(Math.random() * a));
   return r;
 }
-function S(e, r) {
+function S(e, r = "") {
   e === null && (e = ""), r = (`${r || ""}`.toLowerCase().match(/<[a-z][a-z0-9]*>/g) || []).join("");
   const n = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi, a = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi;
   return e.replace(a, "").replace(n, function(o, t) {

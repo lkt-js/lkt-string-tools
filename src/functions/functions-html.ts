@@ -1,4 +1,4 @@
-export function stripTags(input: string, allowed: string): string {
+export function stripTags(input: string, allowed: string = ''): string {
   if (input === null) {
     input = '';
   }

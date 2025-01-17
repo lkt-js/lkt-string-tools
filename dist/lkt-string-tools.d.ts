@@ -16,7 +16,7 @@ declare function A(e: any, r: any, n: any): any;
 declare function U(e: any, r: any, n: any): any;
 declare function d(e: any): string;
 declare function g(e: any, r: any): any;
-declare function S(e: any, r: any): any;
+declare function S(e: any, r?: string): any;
 declare function f(e: any): string;
 declare function z(e: any, r?: string): any;
 declare function v(e: any): any;
